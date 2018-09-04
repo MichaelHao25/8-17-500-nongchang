@@ -1,0 +1,203 @@
+/* 引入css文件的一种方式 */
+/*
+
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#99ffffff,endColorstr=#99ffffff)";
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff,endColorstr=#99ffffff);
+background:rgba(255,255,255,.8);
+
+
+ filter:alpha(opacity=40); 针对 IE8 以及更早的版本 */
+body {
+  font-size: 16Px;
+}
+.full-page,
+.full-page body,
+.full-page body .mobile-wrap {
+  width: 100%;
+  height: 100%;
+}
+.mobile-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.full-page body .mobile-wrap {
+  max-width: 720Px;
+  background: url("../img/3cc6cc37539a245814124572cda39ce5-723+1139.jpg") center top/100% auto no-repeat;
+}
+.area,
+.tips,
+.spade {
+  pointer-events: none;
+}
+.area {
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 2.9rem;
+  left: 0;
+  z-index: 1;
+}
+.area-top {
+  top: 2.85rem;
+}
+.area-bottom {
+  top: 6.38rem;
+}
+.tips {
+  position: absolute;
+}
+.tips-top {
+  top: 1.83rem;
+  left: 1.98rem;
+  width: 0.98rem;
+}
+.tips-bottom {
+  left: 0.24rem;
+  top: 4.95rem;
+  width: 1.8rem;
+}
+.layout {
+  position: absolute;
+  z-index: 2;
+}
+.layout-top {
+  height: 1.28rem;
+  width: 5rem;
+  background: #000;
+  opacity: 0.6;
+  top: 2.85rem;
+  left: 2.5rem;
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-transform: skew(-65deg, 25deg);
+          transform: skew(-65deg, 25deg);
+}
+.layout-bottom {
+  top: 6.38rem;
+  height: 1.5rem;
+  width: 5.85rem;
+  background: #000;
+  opacity: 0.6;
+  left: 2.3rem;
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-transform: skew(-65deg, 25deg);
+          transform: skew(-65deg, 25deg);
+}
+.spade {
+  position: absolute;
+  width: 0.9rem;
+  z-index: 8;
+  opacity: 0;
+  transition: 0.3s opacity;
+}
+.spade.animation {
+  -webkit-animation: animation-shovel 1s ease-in-out 2;
+          animation: animation-shovel 1s ease-in-out 2;
+}
+.spade.active {
+  opacity: 1;
+}
+.spade img {
+  display: block;
+  width: 100%;
+}
+.menu-layout {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  z-index: 9;
+}
+.menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0.02rem solid rgba(255,255,255,0.38);
+  background: rgba(255,255,255,0.28);
+  border-radius: 50%;
+  z-index: 10;
+  margin-top: -1.2rem;
+  margin-left: -1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-transform: scale(0) rotate(360deg);
+          transform: scale(0) rotate(360deg);
+  opacity: 0;
+  transition: 0.3s;
+}
+.menu.active {
+  opacity: 1;
+  -webkit-transform: scale(1) rotate(0deg);
+          transform: scale(1) rotate(0deg);
+}
+.menu.active+.menu-layout {
+  display: block;
+}
+.menu .poa {
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: url("") center center no-repeat;
+}
+.menu .text {
+  font-size: 0.28rem;
+  color: #352c10;
+  line-height: 0.8rem;
+  text-align: center;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+}
+.menu .top {
+  background-size: 0.52rem auto;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.menu .right {
+  background-size: 0.64rem auto;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.menu .left {
+  background-size: 0.58rem auto;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.menu .bottom {
+  background-size: 0.72rem auto;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+@-webkit-keyframes animation-shovel {
+  50% {
+    -webkit-transform: translate(0.1rem, 0.1rem) rotateX(20deg);
+            transform: translate(0.1rem, 0.1rem) rotateX(20deg);
+    -webkit-transform-origin: right center;
+            transform-origin: right center;
+  }
+}
+@keyframes animation-shovel {
+  50% {
+    -webkit-transform: translate(0.1rem, 0.1rem) rotateX(20deg);
+            transform: translate(0.1rem, 0.1rem) rotateX(20deg);
+    -webkit-transform-origin: right center;
+            transform-origin: right center;
+  }
+}
+
+/*# sourceMappingURL=public.css.map */

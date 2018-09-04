@@ -1,0 +1,113 @@
+﻿<!doctype html>
+<html class="full-page">
+
+<head design-width="720">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<title>Demo</title>
+	<link rel="stylesheet" href="css/reset.css" />
+	<!--重置样式-->
+	<link rel="stylesheet" href="css/style.css" />
+	<!--页面样式-->
+	<link rel="stylesheet" href="css/common.css" />
+	<!--常用样式库-->
+	<link rel="stylesheet" href="css/animate.min.css" />
+	<!--CSS3动画库-->
+	<link rel="stylesheet" href="css/public.css">
+	<script src="js/auto-size.js"></script>
+	<!--设置字体大小-->
+</head>
+
+<body>
+	<div class="mobile-wrap center">
+		<img src="img/09469f6b25e90db18c22068994684f11-720+361.png" class="area area-top" alt="">
+		<img src="img/90cacf7d04ff22476b09c9d51175530f-720+426.png" class="area area-bottom" alt="">
+
+		<img src="img/adadec04500495a463e37c9ffe328236-187+235.png" alt="" class="tips tips-top">
+		<img src="img/adadec04500495a463e37c9ffe328236-187+235.png" alt="" class="tips tips-bottom">
+		<div class="layout layout-top"></div>
+		<div class="layout layout-bottom"></div>
+		<div class="spade">
+			<img src="img/6b1ca3d15ea0dd789bf4780a225e7936-89+84.png" alt="">
+		</div>
+
+		<div class="menu">
+			<div class="poa top" style="background-image: url('img/45bd3ad286f6ac408d34858ffd5e5465-51+50.png')">
+			</div>
+			<div class="poa right" style="background-image: url('img/4bf21bedf21354e744db572a70a33a80-63+49.png')">
+			</div>
+			<div class="text">种子</div>
+			<div class="poa left" style="background-image: url('img/5f8f2de46506a0f5a80c42e4b7933ef9-58+73.png')">
+			</div>
+			<div class="poa bottom" style="background-image: url('img/387bbc22aea51edbc2822b6f164b6548-71+46.png')">
+			</div>
+		</div>
+		<div class="menu-layout"></div>
+		<div class="fixed-bottom center fixed">
+			<div class="footer">
+				<ul>
+					<li>
+						<a href="#" title="">
+							<i class="ico-i1"></i>
+							<span>种子收购</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" title="">
+							<i class="ico-i2"></i>
+							<span>种植</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" title="">
+							<i class="ico-i3"></i>
+							<span>果蔬销售</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--mobile_wrap-->
+
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<!--jQ库-->
+	<script src="js/swiper-4.2.0.min.js"></script>
+	<!--轮播库-->
+	<script src="js/MobEpp-1.1.1.js"></script>
+	<!--封装函数-->
+	<script>
+		$('.layout').on('click', function (e) {
+			$('.spade').removeClass('animation').css({
+				'top': e.clientY - $('.spade').height() + 'px',
+				'left': e.clientX - $('.full-page body .mobile-wrap').offset().left + 'px',
+			}).addClass('animation active')
+
+			$('.menu').addClass('active');
+		})
+
+		$('.menu .poa').on('click', function () {
+			$('.menu').removeClass('active');
+			$('.spade').removeClass('active')
+		})
+
+
+		var pfx = ["webkit", "moz", "MS", "o", ""];
+
+		function prefixedEventListener(element, type, callback) {
+			for (var p = 0; p < pfx.length; p++) {
+				if (!pfx[p]) type = type.toLowerCase();
+				element.addEventListener(pfx[p] + type, callback, false);
+			}
+		}
+		var monkey = document.querySelector(".spade");
+		prefixedEventListener(monkey, "AnimationEnd", function (e) {
+			this.classList.remove('animation')
+		});
+	</script>
+</body>
+
+</html>

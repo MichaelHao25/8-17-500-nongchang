@@ -1,0 +1,163 @@
+
+/* 引入css文件的一种方式 */
+/*
+
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#99ffffff,endColorstr=#99ffffff)";
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff,endColorstr=#99ffffff);
+background:rgba(255,255,255,.8);
+
+
+ filter:alpha(opacity=40); 针对 IE8 以及更早的版本 */
+body
+	font-size 16Px
+
+.full-page
+.full-page body
+.full-page body .mobile-wrap
+	width 100%
+	height 100%
+
+.mobile-wrap
+	position relative
+	overflow hidden
+
+.full-page body .mobile-wrap
+	max-width 720Px
+	background url('../img/3cc6cc37539a245814124572cda39ce5-723+1139.jpg') center top/100% auto no-repeat
+
+.area
+.tips
+.spade
+	pointer-events none
+.area
+	width 100%
+	display block
+	position absolute
+	top 290px
+	left 0
+	z-index 1
+
+.area-top
+	top 285px
+.area-bottom
+	top 638px
+
+.tips
+	position absolute
+
+.tips-top
+	top 183px
+	left 198px
+	width 98px
+.tips-bottom
+	left 24px
+	top 495px
+	width 180px
+
+.layout
+	position absolute
+	z-index 2
+
+.layout-top
+	height 128px
+	width 500px
+	background #000000
+	opacity 0.6
+	top 285px
+	left 250px
+	transform-origin left top
+	transform skew(-65deg,25deg)
+.layout-bottom
+	top 638px
+	height 150px
+	width 585px
+	background #000000
+	opacity 0.6
+	left 230px
+	transform-origin left top
+	transform skew(-65deg,25deg)
+
+.spade
+	position absolute
+	width 90px
+	z-index 8
+	opacity 0
+	transition 0.3s opacity
+	&.animation
+		animation animation-shovel 1s ease-in-out 2
+	&.active
+		opacity 1
+	img
+		display block
+		width 100%
+
+@keyframes animation-shovel
+	50%
+		transform translate(10px, 10px) rotateX(20deg)
+		transform-origin right center
+.menu-layout
+	position absolute
+	top 0
+	bottom 0
+	left 0
+	right 0
+	display none
+	z-index 9
+.menu
+	position absolute
+	top 50%
+	left 50%
+	width 240px
+	height 240px
+	border 2px solid rgba(#fff,0.38)
+	background rgba(#fff,0.28)
+	border-radius 50%
+	z-index 10
+	margin-top -120px
+	margin-left -120px
+	display flex
+	align-items center
+	justify-content center
+	transform scale(0) rotate(360deg)
+	opacity 0
+	transition 0.3s
+	&.active
+		opacity 1
+		transform scale(1) rotate(0deg)
+		&+.menu-layout
+			display block
+	.poa
+		position absolute
+		width 80px
+		height 80px
+		background url('') center center no-repeat
+		
+	.text
+		font-size 28px
+		color #352c10
+		line-height 80px
+		text-align center
+		width 80px
+		height 80px
+		border-radius 50%
+		background rgba(#fff,0.5)
+	.top
+		background-size 52px auto
+		top 0
+		left 50%
+		transform translateX(-50%)
+	.right
+		background-size 64px auto
+		right 0
+		top 50%
+		transform translateY(-50%)
+	.left
+		background-size 58px auto
+		left 0
+		top 50%
+		transform translateY(-50%)
+	.bottom
+		background-size 72px auto
+		bottom 0
+		left 50%
+		transform translateX(-50%)
